@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politica de confidențialitate — Alert Vision</title>
+<meta name="description" content="Politica de confidențialitate a aplicației Alert Vision.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7F6;
+    --surface: #FFFFFF;
+    --surface-muted: #EAF0EE;
+    --ink: #142023;
+    --ink-soft: #4A5A5D;
+    --ink-faint: #7A8A8B;
+    --line: #DBE4E1;
+    --accent: #1F6F64;
+    --accent-strong: #124E45;
+    --accent-tint: #E4F0EC;
+    --amber: #B06A16;
+    --amber-tint: #F5E7D2;
+    --shadow: 0 1px 2px rgba(20, 32, 35, 0.04), 0 8px 24px rgba(20, 32, 35, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1513;
+      --surface: #141D1B;
+      --surface-muted: #1B2624;
+      --ink: #E6EEEC;
+      --ink-soft: #AAB9B6;
+      --ink-faint: #7C8C89;
+      --line: #263330;
+      --accent: #4FBFAE;
+      --accent-strong: #7ED9C9;
+      --accent-tint: #16241F;
+      --amber: #E3A256;
+      --amber-tint: #26200F;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0E1513;
+    --surface: #141D1B;
+    --surface-muted: #1B2624;
+    --ink: #E6EEEC;
+    --ink-soft: #AAB9B6;
+    --ink-faint: #7C8C89;
+    --line: #263330;
+    --accent: #4FBFAE;
+    --accent-strong: #7ED9C9;
+    --accent-tint: #16241F;
+    --amber: #E3A256;
+    --amber-tint: #26200F;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 700px);
+    gap: 64px;
+    justify-content: center;
+  }
+
+  header.hero {
+    grid-column: 1 / -1;
+    max-width: 700px;
+    margin: 0 auto 8px;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-tint);
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4.5vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 0 26px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 600;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-soft);
+  }
+
+  .pill.status {
+    color: var(--accent-strong);
+    border-color: transparent;
+    background: var(--accent-tint);
+  }
+
+  .pill.status .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .pill .val {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13.5px;
+  }
+
+  nav.toc .toc-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+
+  nav.toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 6px 0 6px 14px;
+    border-left: 2px solid var(--line);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  nav.toc a:hover, nav.toc a:focus-visible {
+    color: var(--accent-strong);
+    border-left-color: var(--accent);
+    outline: none;
+  }
+
+  main {
+    min-width: 0;
+  }
+
+  section {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 32px;
+  }
+
+  section:first-of-type { padding-top: 6px; }
+  section:last-of-type { border-bottom: none; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .sec-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: "Public Sans", sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 22px 0 8px;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 14px; max-width: 66ch; color: var(--ink); }
+  p.lead-in { color: var(--ink-soft); }
+  section > p:last-child, section > ul:last-child, .box:last-child { margin-bottom: 0; }
+
+  ul { margin: 0 0 14px; padding-left: 20px; max-width: 64ch; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--accent); }
+
+  code, .tech {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.88em;
+    background: var(--surface-muted);
+    border-radius: 4px;
+    padding: 1px 6px;
+    color: var(--ink);
+  }
+
+  a { color: var(--accent-strong); }
+  a:hover { color: var(--accent); }
+
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: var(--shadow);
+  }
+
+  .box .box-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 18px;
+    font-size: 14.5px;
+  }
+
+  .data-table th {
+    text-align: left;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    padding: 0 12px 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .data-table td {
+    padding: 12px 12px 12px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+
+  .data-table td:first-child {
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .table-scroll { overflow-x: auto; }
+
+  .not-collected {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 0;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+
+  .not-collected b { color: var(--ink); }
+
+  footer {
+    grid-column: 1 / -1;
+    max-width: 700px;
+    margin: 40px auto 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: minmax(0, 700px); }
+    nav.toc { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Alert Vision · document legal</div>
+    <h1>Politica de confidențialitate</h1>
+    <p class="dek">Cum colectează, folosește și protejează aplicația Alert Vision datele contului tău, ale locațiilor tale și ale dispozitivelor de supraveghere pe care le conectezi.</p>
+    <div class="meta-row">
+      <span class="pill status"><span class="dot"></span> Document activ</span>
+      <span class="pill">Actualizat: <span class="val">10.09.2026</span></span>
+      <span class="pill">Versiune: <span class="val">1.0</span></span>
+      <span class="pill">Aplicabil pachetului: <span class="val">com.solutions.ai.han.alertvision.app</span></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Cuprins">
+    <div class="toc-label">Cuprins</div>
+    <a href="#operator">1. Operatorul de date</a>
+    <a href="#date-colectate">2. Date colectate</a>
+    <a href="#scop">3. Cum folosim datele</a>
+    <a href="#temei">4. Temeiul legal</a>
+    <a href="#partajare">5. Partajare cu terți</a>
+    <a href="#transfer">6. Transfer internațional</a>
+    <a href="#stocare">7. Perioada de stocare</a>
+    <a href="#securitate">8. Securitatea datelor</a>
+    <a href="#drepturi">9. Drepturile tale</a>
+    <a href="#minori">10. Datele minorilor</a>
+    <a href="#modificari">11. Modificări</a>
+    <a href="#contact">12. Contact</a>
+  </nav>
+
+  <main>
+    <section id="operator">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Operatorul de date</h2></div>
+      <p>Pentru orice întrebare privind această politică sau datele tale, ne poți scrie la adresa indicată în secțiunea <a href="#contact">Contact</a>.</p>
+    </section>
+
+    <section id="date-colectate">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Ce date colectăm</h2></div>
+      <p class="lead-in">Colectăm doar datele necesare pentru ca aplicația să îți poată monitoriza locațiile și dispozitivele de securitate și să îți trimită alerte relevante.</p>
+
+      <h3>Date de cont</h3>
+      <div class="table-scroll">
+        <table class="data-table">
+          <tr><th>Câmp</th><th>Descriere</th></tr>
+          <tr><td>Email</td><td>Folosit pentru crearea contului, autentificare și confirmarea adresei.</td></tr>
+          <tr><td>Nume utilizator</td><td>Identificatorul contului tău în aplicație.</td></tr>
+          <tr><td>Parolă</td><td>Stocată criptat pe server; aplicația nu are acces la parola în clar după creare.</td></tr>
+          <tr><td>Token de autentificare</td><td>Un jeton (JWT) păstrat local pe telefon cât timp rămâi autentificat.</td></tr>
+        </table>
+      </div>
+
+      <h3>Locații</h3>
+      <p>Nume și descriere ale proprietăților pe care le adaugi (de exemplu „Casă”, „Birou”). Acestea sunt etichete alese de tine, <strong>nu</strong> coordonate GPS — aplicația nu îți accesează localizarea telefonului.</p>
+
+      <h3>Dispozitive de securitate conectate</h3>
+      <p>Pentru fiecare cameră video pe care o adaugi la o locație, stocăm datele necesare conectării la fluxul acesteia:</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <tr><th>Câmp</th><th>Descriere</th></tr>
+          <tr><td>Nume dispozitiv</td><td>Numele pe care i-l dai camerei (ex. „Cameră intrare”).</td></tr>
+          <tr><td>Adresă IP / port</td><td>Adresa de rețea a camerei tale.</td></tr>
+          <tr><td>URL flux video (RTSP)</td><td>Adresa fluxului video folosită pentru monitorizare.</td></tr>
+          <tr><td>Utilizator / parolă cameră</td><td>Credențialele camerei fizice — <em>diferite</em> de parola contului tău Alert Vision — necesare pentru conectare.</td></tr>
+          <tr><td>Setări notificări</td><td>Tipul și sensibilitatea alertelor activate pentru fiecare dispozitiv.</td></tr>
+        </table>
+      </div>
+
+      <div class="box">
+        <span class="box-label">Notă tehnică</span>
+        <p style="margin:0">Credențialele camerei (utilizator/parolă, IP, port, URL RTSP) sunt folosite exclusiv pentru ca serverul Alert Vision să se conecteze la propriul tău dispozitiv și să genereze alerte. Nu le partajăm cu alți utilizatori și nu le folosim în alt scop.</p>
+      </div>
+
+      <h3>Notificări</h3>
+      <p>Istoricul alertelor primite de la dispozitivele tale, contorul de notificări necitite și un identificator unic de tip <span class="tech">push token</span> (Firebase Cloud Messaging) prin care telefonul tău primește notificări.</p>
+
+      <h3>Date tehnice</h3>
+      <p>Versiunea aplicației și informații minime de diagnostic, folosite pentru a detecta erori și a te anunța când o actualizare este necesară.</p>
+
+      <div class="not-collected">
+        <span>—</span>
+        <span><b>Nu colectăm:</b> localizarea GPS a telefonului, fotografii sau înregistrări video capturate cu camera foto a telefonului, ori date de plată. Alert Vision nu procesează plăți în aplicație.</span>
+      </div>
+    </section>
+
+    <section id="scop">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Cum folosim datele</h2></div>
+      <ul>
+        <li>Pentru a crea și administra contul tău și a te autentifica în siguranță.</li>
+        <li>Pentru a conecta aplicația la dispozitivele tale de securitate și a genera alerte pe baza setărilor tale de sensibilitate.</li>
+        <li>Pentru a-ți trimite notificări push atunci când un dispozitiv semnalează un eveniment.</li>
+        <li>Pentru a te anunța despre actualizări critice ale aplicației.</li>
+        <li>Pentru depanare, prevenirea abuzurilor și îmbunătățirea stabilității serviciului.</li>
+      </ul>
+    </section>
+
+    <section id="temei">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Temeiul legal</h2></div>
+      <p class="lead-in">Conform Regulamentului (UE) 2016/679 (GDPR), prelucrăm datele tale pe baza următoarelor temeiuri:</p>
+      <ul>
+        <li><strong>Executarea contractului</strong> — pentru a-ți furniza funcționalitățile de bază: cont, locații, dispozitive și alerte.</li>
+        <li><strong>Consimțământul tău</strong> — pentru trimiterea notificărilor push, solicitat explicit în aplicație la prima utilizare.</li>
+        <li><strong>Interesul legitim</strong> — pentru securitatea serviciului, prevenirea utilizării frauduloase și îmbunătățirea aplicației.</li>
+      </ul>
+    </section>
+
+    <section id="partajare">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Partajare cu terți</h2></div>
+      <p>Nu vindem datele tale și nu le folosim în scopuri publicitare. Le partajăm strict cu furnizorii care ne ajută să operăm serviciul:</p>
+      <ul>
+        <li><strong>Firebase Cloud Messaging (Google Ireland Ltd.)</strong> — livrează notificările push către telefonul tău, pe baza token-ului de dispozitiv.</li>
+        <li><strong>Infrastructura server a aplicației</strong> — găzduiește contul, locațiile, dispozitivele și istoricul notificărilor tale, pentru a putea rula serviciul de monitorizare.</li>
+      </ul>
+      <p>Putem divulga date autorităților competente dacă legea ne obligă expres să o facem.</p>
+    </section>
+
+    <section id="transfer">
+      <div class="sec-head"><span class="sec-num">06</span><h2>Transfer internațional</h2></div>
+      <p>Serviciul de notificări push (Firebase/Google) poate procesa date în afara Spațiului Economic European. În acest caz, transferul este realizat pe baza clauzelor contractuale standard aprobate de Comisia Europeană și a garanțiilor oferite de Google pentru conformitatea cu GDPR.</p>
+    </section>
+
+    <section id="stocare">
+      <div class="sec-head"><span class="sec-num">07</span><h2>Perioada de stocare</h2></div>
+      <p>Păstrăm datele contului, locațiilor și dispozitivelor tale atât timp cât contul rămâne activ. Dacă îți ștergi contul, datele sunt șterse sau anonimizate în termen de <strong>30 de zile</strong>, cu excepția cazului în care legea impune o perioadă mai lungă de păstrare (de exemplu, obligații fiscale sau litigii în curs).</p>
+    </section>
+
+    <section id="securitate">
+      <div class="sec-head"><span class="sec-num">08</span><h2>Securitatea datelor</h2></div>
+      <ul>
+        <li>Comunicarea între aplicație și server se face criptat (HTTPS).</li>
+        <li>Parola contului tău este stocată criptat, niciodată în text simplu.</li>
+        <li>Accesul la datele stocate pe server este restricționat și monitorizat.</li>
+      </ul>
+      <p>Niciun sistem nu este 100% infailibil, dar tratăm securitatea datelor tale ca prioritate în dezvoltarea aplicației.</p>
+    </section>
+
+    <section id="drepturi">
+      <div class="sec-head"><span class="sec-num">09</span><h2>Drepturile tale</h2></div>
+      <p class="lead-in">Conform GDPR, ai dreptul să:</p>
+      <ul>
+        <li>soliciți <strong>acces</strong> la datele tale personale și o copie a acestora;</li>
+        <li>ceri <strong>rectificarea</strong> datelor incorecte sau incomplete;</li>
+        <li>ceri <strong>ștergerea</strong> contului și a datelor asociate;</li>
+        <li>ceri <strong>restricționarea</strong> sau te <strong>opui</strong> unei anumite prelucrări;</li>
+        <li>primești datele tale într-un format <strong>portabil</strong>;</li>
+        <li><strong>retragi consimțământul</strong> pentru notificările push, oricând, din setările aplicației sau ale telefonului;</li>
+        <li>depui o <strong>plângere</strong> la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>).</li>
+      </ul>
+      <p>Pentru a-ți exercita oricare dintre aceste drepturi, scrie-ne la adresa din secțiunea <a href="#contact">Contact</a>.</p>
+    </section>
+
+    <section id="minori">
+      <div class="sec-head"><span class="sec-num">10</span><h2>Datele minorilor</h2></div>
+      <p>Alert Vision nu este destinată persoanelor sub 16 ani și nu colectăm cu bună știință date de la minori sub această vârstă. Dacă afli că un minor ne-a furnizat date personale, te rugăm să ne contactezi pentru a le elimina.</p>
+    </section>
+
+    <section id="modificari">
+      <div class="sec-head"><span class="sec-num">11</span><h2>Modificări ale politicii</h2></div>
+      <p>Putem actualiza periodic această politică pentru a reflecta schimbări legale sau funcționale ale aplicației. Data ultimei actualizări este afișată în partea de sus a paginii. Modificările importante vor fi comunicate în aplicație.</p>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head"><span class="sec-num">12</span><h2>Contact</h2></div>
+      <p>
+    Pentru o solicitare privind datele personale sau ștergerea acestora,
+    ne puteți contacta la:
+    <a href="mailto:contact@supercasamea.ro">
+      contact@supercasamea.ro
+    </a>
+  </p>
+  </main>
+
+  <footer>
+    <span>© 2026 Alert Vision</span>
+    <span>Politică de confidențialitate v1.0 · 10 septembrie 2026</span>
+  </footer>
+</div>
+
+</body>
+</html>
